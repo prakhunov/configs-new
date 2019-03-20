@@ -2,7 +2,7 @@
 #https://github.com/thestinger/termite/blob/master/config
 allow_bold = true
 audible_bell = false
-browser = chromium
+#browser = /usr/bin/qutebrowser
 clickable_url = true
 cursor_blink = system
 cursor_shape = block

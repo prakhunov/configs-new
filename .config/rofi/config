@@ -1,0 +1,4 @@
+rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.font: M+ 1mn 12
+rofi.terminal: /usr/bin/termite
+rofi.ssh-command: /usr/bin/termite -e "{ssh-client} {host}"
