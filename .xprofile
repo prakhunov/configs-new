@@ -1,0 +1,16 @@
+xrdb --merge /home/prakhunov/.Xresources
+#/home/prakhunov/.screenlayout/three.sh
+/home/prakhunov/.screenlayout/two.sh
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+/home/prakhunov/.screenlayout/two.sh
+#/home/prakhunov/.screenlayout/three.sh
+
+# janky current two monitor setup
+/usr/bin/dispwin -d1 /home/prakhunov/Documents/ColorProfiles/Dell\ P2418D-L-3.icm
+# old three monitor setup since middle monitor is currently broken
+#/usr/bin/dispwin -d3 /home/prakhunov/Documents/ColorProfiles/Dell\ P2418D-L-3.icm
+#/usr/bin/dispwin -d1 /home/prakhunov/Documents/ColorProfiles/ASUS\ PG348Q-newest-1.icm
+/home/prakhunov/.screenlayout/compton.sh
+nm-applet &
+autocutsel -fork &
+/home/prakhunov/.screenlayout/background.sh &
