@@ -20,7 +20,7 @@ scrollback_lines = 15000
 size_hints = false
 search_wrap = true
 urgent_on_bell = true
-padding = 2
+padding = 0
 
 [hints]
 #font = Monospace 12

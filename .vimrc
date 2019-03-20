@@ -29,6 +29,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('Valloric/YouCompleteMe', { 'on_ft' : ['cs', 'javascript', 'typescript' ] })
   call dein#add('ludovicchabant/vim-gutentags')
+  call dein#add('Galooshi/vim-import-js')
   call dein#add('vim-scripts/AutoComplPop')
   call dein#add('rust-lang/rust.vim')
   call dein#add('vim-syntastic/syntastic')
@@ -38,13 +39,18 @@ if dein#load_state('~/.cache/dein')
   call dein#add('avdgaag/vim-phoenix')
   call dein#add('vim-erlang/vim-erlang-omnicomplete')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('tpope/vim-surround')
+  call dein#add('alvan/vim-closetag')
   call dein#add('terryma/vim-multiple-cursors')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
   call dein#add('nathanaelkane/vim-indent-guides')
   call dein#add('othree/html5.vim')
   call dein#add('thaerkh/vim-workspace')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('ryanoasis/vim-devicons')
+  call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
   " Required:
   call dein#end()
@@ -101,6 +107,7 @@ set showtabline=4
 set encoding=utf-8
 set noshowmode
 set list
+set shell=sh
 
 filetype on
 filetype plugin on
@@ -188,3 +195,33 @@ let g:indent_guides_enable_on_vim_startup = 1
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_autosave_ignore = ['gitcommit']
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹ ",
+    \ "Staged"    : "✚ ",
+    \ "Untracked" : "✭ ",
+    \ "Renamed"   : "➜ ",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖ ",
+    \ "Dirty"     : "✗ ",
+    \ "Clean"     : "✔︎ ",
+    \ 'Ignored'   : '☒ ',
+    \ "Unknown"   : "?"
+    \ }
+
+" tag closing filetypes
+"
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript,js'
