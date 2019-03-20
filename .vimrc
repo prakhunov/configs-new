@@ -43,6 +43,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
   call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('othree/html5.vim')
+  call dein#add('thaerkh/vim-workspace')
 
   " Required:
   call dein#end()
@@ -179,3 +181,10 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 "indent guides
 let g:indent_guides_enable_on_vim_startup = 1
+
+
+"vim workspace settings
+"
+nnoremap <leader>s :ToggleWorkspace<CR>
+let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+let g:workspace_autosave_ignore = ['gitcommit']
