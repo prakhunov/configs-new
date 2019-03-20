@@ -57,6 +57,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -show run 
 bindsym $mod+Shift+grave exec --no-startup-id rofi-pass
+bindsym $mod+n exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -94,6 +95,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
