@@ -12,5 +12,6 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 #/usr/bin/dispwin -d1 /home/prakhunov/Documents/ColorProfiles/ASUS\ PG348Q-newest-1.icm
 /home/prakhunov/.screenlayout/compton.sh
 nm-applet &
-autocutsel -fork &
+clipit &
 /home/prakhunov/.screenlayout/background.sh &
+
