@@ -65,7 +65,7 @@ modules-center = date
 ;modules-right = volume
 
 tray-position = none
-tray-padding= 2
+tray-padding= 0
 tray-maxsize = 22
 ;tray-transparent = true
 ;tray-background = #0063ff
