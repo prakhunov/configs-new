@@ -55,7 +55,7 @@ cursor          = #dc8cc3
 # 20% background transparency (requires a compositor)
 #background = rgba(75, 75, 75, 1.0)
 #background = #2f343f
-background = rgba(47,52,63,0.7)
+background = rgba(47,52,63,1.0)
 
 # black
 color0  = #5b4848
