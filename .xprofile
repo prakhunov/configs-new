@@ -1,4 +1,5 @@
 xrdb --merge /home/prakhunov/.Xresources
+hu  
 /home/prakhunov/.screenlayout/three_notwide.sh
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 /home/prakhunov/.screenlayout/three_notwide.sh
@@ -7,4 +8,5 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 /home/prakhunov/.screenlayout/compton.sh
 nm-applet &
 clipit &
+/usr/bin/xautolock -time 10 -locker '/home/prakhunov/.bin/i3lock-wrapper.sh' &
 /home/prakhunov/.screenlayout/background.sh &
