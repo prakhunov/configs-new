@@ -225,3 +225,11 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 " These are the file types where this plugin is enabled.
 "
 let g:closetag_filetypes = 'html,xhtml,phtml,javascript,js'
+
+
+" syntastic options
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
