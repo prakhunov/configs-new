@@ -126,8 +126,8 @@ font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
-modules-center = spotify1 
-modules-right = arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 arch-aur-updates arrow6 date
+;modules-center = spotify1 
+modules-right = arrow8 spotify1 arrow7 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 arch-aur-updates arrow6 date
 
 separator = 
 
@@ -672,6 +672,22 @@ content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = #1D2330
 content-background = #F07178
+
+[module/arrow7]
+; grey to Blue
+type = custom/text
+content = "%{T2}%{T-}"
+content-font = 2
+content-foreground = #C3E88D
+content-background = #FBBC05
+
+[module/arrow8]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = #FBBC05
+content-background = #292d3e 
 
 
 
@@ -1249,14 +1265,22 @@ type = custom/script
 exec = ~/.config/polybar/scripts/spotify.sh
 interval = 1
 
-;format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 2
-format-underline = #0f0
-format-prefix = "  "
-format-prefix-foreground = #0f0
 label = %output:0:150%
+format = <label>
+format-background = #FBBC05
+format-foreground = ${colors.background}
+format-prefix-foreground = ${colors.background}
+
+
+;format-prefix = "  "
+format-prefix = " "
+
+;format = <label>
+;format-foreground = ${colors.foreground}
+;format-background = ${colors.background}
+format-padding = 1
+;format-underline = #0f0
+;format-prefix-foreground = #0f0
 
 ################################################################################
 
