@@ -1265,7 +1265,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/spotify.sh
 interval = 1
 
-label = %output:0:150%
+label = "%{A3:playerctl previous:}%{A1:playerctl next:}%{A2:playerctl play-pause:}%output:0:150%%{A}%{A}%{A}"
 format = <label>
 format-background = #FBBC05
 format-foreground = ${colors.background}
@@ -1278,7 +1278,7 @@ format-prefix = " "
 ;format = <label>
 ;format-foreground = ${colors.foreground}
 ;format-background = ${colors.background}
-format-padding = 1
+format-padding = 0
 ;format-underline = #0f0
 ;format-prefix-foreground = #0f0
 
