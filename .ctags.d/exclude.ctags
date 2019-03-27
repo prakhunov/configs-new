@@ -1,0 +1,16 @@
+--exclude=target
+--exclude=.git
+--exclude=.svn
+--exclude=.hg
+--exclude=node_modules
+--exclude=bundle.js
+--exclude=*.js.map
+--exclude=*.min.*
+--exclude=*.swp
+--exclude=*.bak
+--exclude=*.tar.*
+--exclude=bower_components
+--exclude=test
+--exclude=tests
+--exclude=min
+--exclude=vendor
