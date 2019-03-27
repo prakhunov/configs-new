@@ -51,6 +51,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-fugitive')
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call dein#add('luochen1990/rainbow')
 
   " Required:
   call dein#end()
@@ -233,3 +234,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+set tags=./tags;,tags;
+
+let g:rainbow_active = 1
