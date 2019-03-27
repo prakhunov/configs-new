@@ -35,7 +35,7 @@
     frame_width = 0
     frame_color = "#212121"
     font = M+ 1mn 11
-    markup = yes
+    markup = full 
     plain_text = no             # Treat message as plain text
     sort = yes                  # Sort messages by urgency
     indicate_hidden = yes       # Show how many messages are currently hidden (see geometry)
@@ -44,11 +44,11 @@
     show_age_threshold = 60     # Show if message is older than x seconds (-1 to disable)
     word_wrap = yes             # Split notifications into multiple lines if they don't fit into geometry
     ignore_newline = no         # Ignore "\n"
-    transparency = 40           # The transparency of the window. 0 (opaque) to 100 (transparent) - requires compositing window manager (xcompmgr, compiz, compton, etc)
+    transparency = 10           # The transparency of the window. 0 (opaque) to 100 (transparent) - requires compositing window manager (xcompmgr, compiz, compton, etc)
     shrink = no                 # Shrink window if it's smaller than the width (ignored if width is 0)
     monitor = 0                 # Display notifications on the monitor indicated (0 is default)
     follow = keyboard           # Follow mouse/keyboard/none
-    show_indicators = no        # Display indicators for URLs (U) and actions (A)
+    show_indicators = yes       # Display indicators for URLs (U) and actions (A)
     line_height = 0             # The spacing between lines (forced to height of font at minimum)
     notification_height = 0     # The height of the entire notification (forced to height of font height and padding at minimum)
     separator_height = 2        # Space in pixels between two notifications
@@ -77,7 +77,7 @@
     close_all = ctrl+shift+space
 
     # Recall last message(s) 
-    history = mod1+grave
+    history = ctrl+grave
 
     # Context menu
-    # context = ctrl+shift+period
+    context = ctrl+shift+period
