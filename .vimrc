@@ -240,3 +240,10 @@ let g:syntastic_check_on_wq = 0
 set tags=./tags;,tags;
 
 let g:rainbow_active = 1
+
+"disable arrow keys
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>

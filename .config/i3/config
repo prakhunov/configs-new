@@ -17,6 +17,35 @@ set $mod Mod4
 #font pango:Terminus 8
 font pango:M+ 1mn 8
 
+set $leftMonitor DP-1-4
+set $middleMonitor DP-4
+set $rightMonitor DP-2
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+#workspaces for me
+
+workspace $ws1 output $middleMonitor
+workspace $ws2 output $middleMonitor
+workspace $ws3 output $leftMonitor
+workspace $ws6 output $leftMonitor
+workspace $ws8 output $rightMonitor
+workspace $ws9 output $rightMonitor
+workspace $ws7 output $rightMonitor
+
+
+popup_during_fullscreen smart
+
+
+
 
 # Espresso Dark color scheme
 set $background #2f343f
@@ -44,8 +73,9 @@ set $white	    #e0d8d6
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+set $myTerm termite
 # start a terminal
-bindsym $mod+Return exec termite 
+bindsym $mod+Return exec $myTerm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -67,10 +97,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -79,16 +109,16 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+minus split h
+bindsym $mod+minus split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+bar split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -112,35 +142,37 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
-bindsym $mod+Ctrl+Left move workspace to output left
-bindsym $mod+Ctrl+Right move workspace to output left
+#bindsym $mod+Ctrl+Left move workspace to output left
+#bindsym $mod+Ctrl+Right move workspace to output right 
 
 
 bindsym $mod+Ctrl+h move workspace to output left
-bindsym $mod+Ctrl+l move workspace to output left
+bindsym $mod+Ctrl+l move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,10 +196,10 @@ mode "resize" {
         bindsym l resize grow width 4 px or 4 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 4 px or 4 ppt
-        bindsym Down resize grow height 4 px or 4 ppt
-        bindsym Up resize shrink height 4 px or 4 ppt
-        bindsym Right resize grow width 4 px or 4 ppt
+#        bindsym Left resize shrink width 4 px or 4 ppt
+#        bindsym Down resize grow height 4 px or 4 ppt
+#        bindsym Up resize shrink height 4 px or 4 ppt
+#        bindsym Right resize grow width 4 px or 4 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -201,13 +233,39 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset PCM,0 1+ unmute"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset PCM,0 1- unmute"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset PCM,0 toggle"
-bindsym Control+$mod+Alt+l exec "~/.bin/i3lock-wrapper.sh"
+bindsym Control+$mod+Mod1+l exec "~/.bin/i3lock-wrapper.sh"
 bindsym $mod+Print exec --no-startup-id "scrot -m '%Y-%m-%d:%H:%M:%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
+bindsym $mod+x [urgent=latest] focus
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
+#where my apps should go.
 
-exec --no-startup-id /usr/bin/alternating_layouts.py
 
 
-bindsym $mod+x [urgent=latest] focus
+
+exec_always --no-startup-id /usr/bin/alternating_layouts.py
+exec_always --no-startup-id "~/.bin/autolock.sh"
+
+# messaging apps
+assign [class="^Slack$"] $ws9
+assign [class="^qTox$"] $ws9
+assign [class="^discord$"] $ws9
+assign [class="^Signal$"] $ws9
+for_window [title="^hangups$"] move to workspace $ws9
+
+# email
+assign [class="^Mailspring$"] $ws8
+
+#reddit
+for_window [title="rtv"] move to workspace $ws3
+
+# music
+# also spotify doesn't do anything correctly so cant use assign
+for_window [class="^Spotify$"] move to workspace $ws7
+
+for_window [class="^Slack$"] layout tabbed
+for_window [class="^qTox$"] layout tabbed
+for_window [class="^discord$"] layout tabbed
+for_window [class="^Signal$"] layout tabbed
+for_window [title="^hangups$"] layout tabbed
