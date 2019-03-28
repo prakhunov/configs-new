@@ -233,7 +233,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset PCM,0 1+ unmute"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset PCM,0 1- unmute"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset PCM,0 toggle"
-bindsym Control+$mod+Mod1+l exec "~/.bin/i3lock-wrapper.sh"
+bindsym Control+$mod+Mod1+l exec "/usr/bin/xautolock -locknow"
 bindsym $mod+Print exec --no-startup-id "scrot -m '%Y-%m-%d:%H:%M:%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
 bindsym $mod+x [urgent=latest] focus
 

@@ -5,5 +5,5 @@ file2=$(mktemp --tmpdir i3lock-wrapper-XXXXXXXXXX.png)
 
 scrot -d0 "$file1"
 convert "$file1" -blur 0x3 "$file2"
-i3lock -i "$file2" "$@"
+i3lock -i "$file2" -n
 rm "$file1" "$file2"
