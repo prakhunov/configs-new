@@ -237,7 +237,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-set tags=./tags;,tags;
+set tags=./tags;,tags;./TAGS;,TAGS
 
 let g:rainbow_active = 1
 

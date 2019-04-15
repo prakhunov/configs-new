@@ -8,4 +8,3 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 nm-applet &
 clipit &
 /home/prakhunov/.screenlayout/background.sh &
-dunst &
