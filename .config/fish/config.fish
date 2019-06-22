@@ -1,4 +1,4 @@
-set -gx PATH $PATH ~/.emacs.d/bin/ ~/.npm/bin/ /home/prakhunov/.local/bin
+set -gx PATH $PATH ~/.emacs.d/bin/ ~/.npm/bin/ ~/.local/bin ~/.cargo/bin/
 set -gx XDG_DATA_DIRS /usr/local/share:/usr/share
 set -gx EDITOR /usr/bin/vim
 set -gx BROWSER "/usr/bin/qutebrowser %s"
