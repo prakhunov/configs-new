@@ -12,3 +12,4 @@ set -xU LESS_TERMCAP_us (printf "\e[01;32m")
 
 set -U dangerous_nogreeting
 set dangerous_colors night
+source ~/.asdf/asdf.fish
