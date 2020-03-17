@@ -33,10 +33,16 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(systemd
+   '((lsp :variables
+          lsp-ui-doc-winum-ignore t
+          lsp-ui-doc--buffer-prefix " *lsp-ui-doc-")
+     vimscript
+     systemd
      csv
      typescript
      shell-scripts
+     themes-megapack
+     common-lisp
      (colors :variables
              colors-colorize-identifiers 'all)
      html
@@ -50,8 +56,7 @@ This function should only modify configuration layer settings."
      rust
      yaml
      ansible
-     common-lisp
-     python
+     (python :variables python-backend 'anaconda)
      react
      dap
      auto-completion
@@ -66,7 +71,6 @@ This function should only modify configuration layer settings."
      emacs-lisp
      java
      git
-     lsp
      (haskell :variables
               haskell-completion-backend 'intero
               haskell-enable-hindent t
@@ -242,10 +246,10 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
 ;;   dotspacemacs-default-font '("Source Code Pro"
-   dotspacemacs-default-font '("mplus Nerd Font"
-                               :size 13
+   dotspacemacs-default-font '("M+ 1mn"
                                :weight normal
-                               :width normal)
+                               :width normal
+                               )
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -516,6 +520,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (add-to-list 'term-file-aliases '("alacritty" . "xterm"))
   (my-setup-indent 2)
   (ruby-setup)
   (browser-setup)
@@ -528,6 +533,33 @@ This function is called only while dumping Spacemacs configuration. You can
 dump."
   )
 
+(defun xah-space-to-newline ()
+  "Replace space sequence to a newline char.
+Works on current block or selection.
+
+URL `http://ergoemacs.org/emacs/emacs_space_to_newline.html'
+Version 2017-08-19"
+  (interactive)
+  (let* ( $p1 $p2 )
+    (if (use-region-p)
+        (progn
+          (setq $p1 (region-beginning))
+          (setq $p2 (region-end)))
+      (save-excursion
+        (if (re-search-backward "\n[ \t]*\n" nil "move")
+            (progn (re-search-forward "\n[ \t]*\n")
+                   (setq $p1 (point)))
+          (setq $p1 (point)))
+        (re-search-forward "\n[ \t]*\n" nil "move")
+        (skip-chars-backward " \t\n" )
+        (setq $p2 (point))))
+    (save-excursion
+      (save-restriction
+        (narrow-to-region $p1 $p2)
+        (goto-char (point-min))
+        (while (re-search-forward " +" nil t)
+          (replace-match "\n" ))))))
+
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -536,6 +568,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (add-hook 'term-mode-hook 'toggle-truncate-lines)
   (global-git-commit-mode t)
+  (spacemacs/load-spacemacs-env)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
   )
 

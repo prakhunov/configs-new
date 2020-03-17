@@ -33,13 +33,13 @@ set $ws10 10
 
 #workspaces for me
 
-workspace $ws1 output $middleMonitor
-workspace $ws2 output $middleMonitor
-workspace $ws3 output $leftMonitor
-workspace $ws6 output $leftMonitor
-workspace $ws8 output $rightMonitor
-workspace $ws9 output $rightMonitor
-workspace $ws7 output $rightMonitor
+#workspace $ws1 output $middleMonitor
+#workspace $ws2 output $leftMonitor
+#workspace $ws3 output $leftMonitor
+#workspace $ws6 output $leftMonitor
+#workspace $ws8 output $rightMonitor
+#workspace $ws9 output $rightMonitor
+#workspace $ws7 output $rightMonitor
 
 
 popup_during_fullscreen smart
@@ -73,7 +73,7 @@ set $white	    #e0d8d6
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-set $myTerm termite
+set $myTerm /usr/bin/alacritty
 # start a terminal
 bindsym $mod+Return exec $myTerm
 
@@ -88,6 +88,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons 
 bindsym $mod+Shift+grave exec --no-startup-id rofi-pass
+bindsym $mod+g fullscreen toggle global
 bindsym $mod+n exec --no-startup-id rofi -show window -show-icons
 
 # change focus
