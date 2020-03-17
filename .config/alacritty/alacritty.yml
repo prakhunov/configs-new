@@ -1,0 +1,33 @@
+env:
+  TERM: xterm-24bit
+font:
+  size: 11
+  normal: 
+    family: M+ 1mn
+colors:
+  # Default colors
+  primary:
+    background: '0x2f343f'
+    foreground: '0xf5f8f6'
+  # Normal colors
+  normal:
+    black:   '0x5b4848'
+    red:     '0xcb6077'
+    green:   '0xbec55b'
+    yellow:  '0xe4bc87'
+    blue:    '0x8ab3d5'
+    magenta: '0xa89bb9'
+    cyan:    '0x7bcdb4'
+    white:   '0xe0d8d6'
+
+  # Bright colors
+  bright:
+    black:   '0x736060'
+    red:     '0xe3788f'
+    green:   '0xd6ed73'
+    yellow:  '0xfcd49f'
+    blue:    '0xa2cbed'
+    magenta: '0xc0b3d1'
+    cyan:    '0x93e5cc'
+    white:   '0xf8f0ee'
+
