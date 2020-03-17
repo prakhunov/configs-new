@@ -1,0 +1,1 @@
+/home/prakhunov/.local/share/omf/themes/syl20bnr/fish_prompt.fish
